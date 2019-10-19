@@ -1,0 +1,18 @@
+matrix:
+  include:
+    - language: python
+      dist: xenial
+      sudo: required
+      python: "3.7"
+      services:
+        - docker
+
+env:
+  global:
+    - CIBW_BUILD="cp37-*"
+    - CIBW_TEST_COMMAND="set -o && shopt && python -VV && python -m unittest discover -f -v -s {project}/tests"
+
+script:
+  - pip install -e git+git://github.com/joerick/cibuildwheel.git@5f416b194a488b79aaab7a696e23ab6958f99932#egg=cibuildwheel
+  - cibuildwheel --output-dir wheelhouse
+  - ls wheelhouse
