@@ -12,10 +12,9 @@ matrix:
 env:
   global:
     - CIBW_BUILD="cp37-*"
-    - CIBW_ENVIRONMENT='BASH_SETTING="$(set -o)"'
-    - CIBW_TEST_COMMAND="echo 'bash setting' && echo $BASH_SETTING && echo 'subshell' && set -o && python -m unittest discover -f -v -s {project}/tests"
+    - CIBW_TEST_COMMAND="echo 'in subshell' && set -o && python -m unittest discover -f -v -s {project}/tests"
 
 script:
-  - pip install -e git+git://github.com/joerick/cibuildwheel.git@5f416b194a488b79aaab7a696e23ab6958f99932#egg=cibuildwheel
+  - pip install -e git+git://github.com/GjjvdBurg/cibuildwheel.git@returncode_fix#egg=cibuildwheel
   - cibuildwheel --output-dir wheelhouse
   - ls wheelhouse
