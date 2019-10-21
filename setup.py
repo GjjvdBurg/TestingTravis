@@ -11,4 +11,6 @@ setup(
     author_email="gertjanvandenburg@gmail.com",
     packages=find_packages(exclude=["tests"]),
     license="MIT",
+    extras_require={'docs': ['sphinx'],
+        'fail': ['pinx']}
 )
