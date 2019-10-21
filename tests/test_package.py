@@ -10,3 +10,6 @@ class TestCase(unittest.TestCase):
         exp = "Hello, World!"
         out = func()
         self.assertEqual(exp, out)
+
+    def test_func_2(self):
+        self.assertTrue(False)
