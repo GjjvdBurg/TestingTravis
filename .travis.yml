@@ -16,6 +16,6 @@ env:
       #- CIBW_TEST_COMMAND="echo 'in subshell' && set -o && python -m unittest discover -f -v -s {project}/tests"
 
 script:
-  - pip install -e git+git://github.com/GjjvdBurg/mycibuildwheelfork.git@returncode_test#egg=cibuildwheel
+  - pip install -e git+git://github.com/joerick/cibuildwheel.git@master#egg=cibuildwheel
   - cibuildwheel --output-dir wheelhouse
   - ls wheelhouse
