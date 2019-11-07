@@ -12,8 +12,8 @@ matrix:
 env:
   global:
     - CIBW_BUILD="cp37-*"
-    - CIBW_TEST_COMMAND="echo 'in subshell' && set -o && false"
-      #- CIBW_TEST_COMMAND="echo 'in subshell' && set -o && python -m unittest discover -f -v -s {project}/tests"
+      #- CIBW_TEST_COMMAND="echo 'in subshell' && set -o && false"
+    - CIBW_TEST_COMMAND="echo 'in subshell' && set -o && python -m unittest discover -f -v -s {project}/tests"
 
 script:
   - pip install -e git+git://github.com/joerick/cibuildwheel.git@master#egg=cibuildwheel
