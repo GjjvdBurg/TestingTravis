@@ -18,6 +18,6 @@ env:
 script:
   #- pip install -e 
   #git+git://github.com/joerick/cibuildwheel.git@master#egg=cibuildwheel
-  - pip install -e git+git://github.com/joerick/cibuildwheel.git@5f416b194a488b79aaab7a696e23ab6958f99932#egg=cibuildwheel
+  - pip install -e git+git://github.com/joerick/cibuildwheel.git@ee2a90880a2d7c3a9b3ac953e2aa2ae50187e51b#egg=cibuildwheel
   - cibuildwheel --output-dir wheelhouse
   - ls wheelhouse
